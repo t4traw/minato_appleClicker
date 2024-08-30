@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbivxw1yc8kmo"]
+
+[ext_resource type="Texture2D" uid="uid://qx7ndlq2do1k" path="res://bg.png" id="1_bndbj"]
+[ext_resource type="Texture2D" uid="uid://8gu4yyrrkx1v" path="res://apple.png" id="1_u05ay"]
+[ext_resource type="Script" path="res://apple.gd" id="2_plmpd"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(562, 311)
+scale = Vector2(0.615625, 0.637037)
+texture = ExtResource("1_bndbj")
+
+[node name="apple" type="Sprite2D" parent="."]
+position = Vector2(833, 377)
+scale = Vector2(0.5625, 0.5)
+texture = ExtResource("1_u05ay")
+script = ExtResource("2_plmpd")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="appletext" type="Label" parent="."]
+offset_left = 718.0
+offset_top = 123.0
+offset_right = 1023.0
+offset_bottom = 332.0
+theme_override_colors/font_outline_color = Color(0.952941, 0.247059, 0.647059, 1)
+theme_override_constants/outline_size = 23
+theme_override_font_sizes/font_size = 75
+text = "apple
+
+"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 35.0
+offset_top = 24.0
+offset_right = 496.0
+offset_bottom = 184.0
+theme_override_font_sizes/font_size = 55
+text = "リンゴの木×０
+(10appies)"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 40.0
+offset_top = 284.0
+offset_right = 505.0
+offset_bottom = 444.0
+theme_override_font_sizes/font_size = 55
+text = " クリックパワーx0
+(100appies)"
+
+[connection signal="pressed" from="Button" to="apple" method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="apple" method="_on_button_2_pressed"]
